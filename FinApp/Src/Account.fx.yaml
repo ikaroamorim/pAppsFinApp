@@ -1,0 +1,274 @@
+Account As screen:
+    Fill: =RGBA(232, 232, 232, 1)
+
+    "'Header Component_2' As 'Header Component'":
+        NomeTela: ="Conta Corrente"
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Height: |+
+            =777
+            
+            
+            
+        Items: |-
+            =If(
+                Dropdown1.SelectedText.Value = "Todos",
+                SortByColumns(
+                    Filter(
+                        Expenses,
+                        And(
+                            ThisRecord.Data >= DatePickerInicio.SelectedDate,
+                            ThisRecord.Data < DatePickerFinal.SelectedDate
+                        )
+                    ),
+                    "Data",
+                    Descending
+                ),
+                SortByColumns(
+                    Filter(
+                        Expenses,
+                        And(
+                            ThisRecord.Data >= DatePickerInicio.SelectedDate,
+                            ThisRecord.Data < DatePickerFinal.SelectedDate,
+                            ThisRecord.Categoria.Value = Dropdown1.SelectedText.Value
+                        )
+                    ),
+                    "Data",
+                    Descending
+                )
+            )
+            /*SortByColumns(
+                Filter(
+                    Expenses;
+                    And(
+                        ThisRecord.Data >= DatePickerInicio.SelectedDate;
+                        ThisRecord.Data < DatePickerFinal.SelectedDate
+                    )
+                );
+                "Data";
+                Descending
+            )*/
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =86
+        Width: =App.Width *0.8
+        X: =App.Width * 0.1
+        Y: =259
+        ZIndex: =2
+
+        Title2 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Categoria.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =935
+            X: =231
+            Y: =4
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Descrição
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2.Width
+            X: =Title2.X
+            Y: =Title2.Y + Title2.Height + 4
+            ZIndex: =3
+
+        Separator1 As rectangle:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Fill: =RGBA(0, 89, 178, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Title2_1 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Data
+            VerticalAlign: =VerticalAlign.Top
+            Width: =163
+            X: |-
+                =
+                 24
+            Y: =19
+            ZIndex: =6
+
+        Label2 As label:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="R$ " & Text(ThisItem.Total, "0.00")
+            X: =1386
+            Y: =19
+            ZIndex: =7
+
+    Container1 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(241, 241, 241, 1)
+        Height: =App.Height * 0.1
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =20
+        LayoutJustifyContent: =LayoutJustifyContent.End
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =20
+        Width: =App.Width
+        Y: ='Header Component_2'.Height
+        ZIndex: =3
+
+        Dropdown1 As dropdown:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            ChevronBackground: =RGBA(0, 51, 102, 1)
+            ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+            ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Default: ="Todos"
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(153, 205, 255, 1)
+            Items: |-
+                =["Acertos",
+                "Almoço Trabalho",
+                "Casa",
+                "Celular", 
+                "Comida Fora",
+                "Diversos",
+                "Jogos",
+                "Mudança",
+                "PC",
+                "Roupas e Acessórios",
+                "Saúde e Beleza",
+                "Supermercado",
+                "Todos",
+                "Trabalho",
+                "Transferência",
+                "Transporte"
+                ]
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 89, 178, 1)
+            SelectionFill: =RGBA(0, 51, 102, 1)
+            Size: =13
+            ZIndex: =1
+
+        Label3 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Size: =13
+            Text: ="Data Inicial"
+            ZIndex: =2
+
+        DatePickerInicio As datepicker:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            CalendarHeaderFill: =RGBA(0, 51, 102, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DefaultDate: =Date( Year(Today()), Month(Today()), 01)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            HoverDateFill: =RGBA(153, 205, 255, 1)
+            IconBackground: =RGBA(0, 51, 102, 1)
+            SelectedDateFill: =RGBA(0, 51, 102, 1)
+            ZIndex: =3
+
+        Label4 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Size: =13
+            Text: ="Data Final"
+            ZIndex: =4
+
+        DatePickerFinal As datepicker:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            CalendarHeaderFill: =RGBA(0, 51, 102, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            HoverDateFill: =RGBA(153, 205, 255, 1)
+            IconBackground: =RGBA(0, 51, 102, 1)
+            SelectedDateFill: =RGBA(0, 51, 102, 1)
+            ZIndex: =5
+
+        "'PDF Button' As button":
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 51, 102, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+            OnSelect: |-
+                =Set(
+                    varPDF,
+                    PDF(
+                        Gallery1,
+                        {
+                            Orientation: Portrait,
+                            Size: PaperSize.A4,
+                            Margin: "24pt 24pt 24pt 24pt",
+                            ExpandContainers: true
+                        }
+                    )
+                );
+                Office365Outlook.SendEmailV2(
+                    User().Email,
+                    "Itens Exportados Conta Corrente",
+                    "Em Anexo o PDF exportado",
+                    {
+                        Attachments: Table(
+                            {
+                                Name: "ItensExportados.pdf",
+                                ContentBytes: varPDF
+                            }
+                        )
+                    }
+                );
+                
+                /*FinAPPSaveFile.Run(
+                    {
+                        file:
+                        {
+                            name:"test.pdf", 
+                            contentBytes:varPDF
+                        }
+                    }
+                )*/
+            Size: =15
+            Text: ="PDF"
+            ZIndex: =6
+

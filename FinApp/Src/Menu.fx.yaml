@@ -1,0 +1,70 @@
+Menu As screen:
+    Fill: =RGBA(232, 232, 232, 1)
+
+    "MenuGallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnVariant_ver4.0'":
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Height: =(App.Height - 'Header Component_1'.Height) * 90/100
+        Items: =varMenuItems
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate( ThisItem.Value.Tela, Cover)
+        TemplatePadding: =0
+        TemplateSize: =Min(416, Self.Height - 60)
+        Width: =App.Width * 80/ 100
+        WrapCount: =2
+        X: =(App.Width - Self.Width) /2
+        Y: =(App.Height- 'Header Component_1'.Height - Self.Height) / 2 + 'Header Component_1'.Height
+        ZIndex: =1
+
+        Image4 As image:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =Self.Width
+            Image: =ThisItem.Value.Imagem
+            ImagePosition: =ImagePosition.Fill
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth *0.4
+            X: =(Parent.TemplateWidth - Self.Width) * 0.5
+            Y: =10
+            ZIndex: =1
+
+        Title1 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Value.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 64
+            X: =32
+            Y: =Image4.Y + Image4.Height + 16
+            ZIndex: =2
+
+        Button3 As button:
+            BorderColor: =Transparent
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =Transparent
+            FontWeight: =FontWeight.Semibold
+            Height: =Title1.Height +Title1.Y
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 51, 102, 0.1), -20%)
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =""
+            Width: =Image4.Width * 1.2
+            X: =Image4.X - Image4.Width *0.1
+            ZIndex: =3
+
+    "'Header Component_1' As 'Header Component'":
+        NomeTela: ="Menu"
+        ZIndex: =2
+

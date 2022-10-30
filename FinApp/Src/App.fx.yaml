@@ -1,0 +1,10 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set( varMenuItems,  [
+            {Title: "Conta Correte", Tela: Account, Imagem: imgGastos }, 
+            {Title: "Pending Creation", Tela: Account, Imagem: imgWorknProgress},
+            {Title: "Pending Creation", Tela: Account, Imagem: imgWorknProgress},
+            {Title: "Pending Creation", Tela: Account, Imagem: imgWorknProgress} 
+            ]);
+

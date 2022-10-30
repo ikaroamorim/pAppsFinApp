@@ -1,0 +1,86 @@
+"'Header Component' As CanvasComponent":
+    Fill: =RGBA(0, 51, 102, 1)
+    Height: =App.Height *10 /100
+    NomeTela: ="Texto"
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    MainContainer As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 51, 102, 1)
+        Height: =App.Height * 10/100
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =App.Width * 0.05
+        PaddingRight: =App.Width * 0.05
+        Width: =App.Width
+        ZIndex: =1
+
+        LogoContainer As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width * 0.25
+            ZIndex: =1
+
+            AppLogo As image:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Image: ='wallet (1)'
+                OnSelect: =Navigate(Menu)
+                ZIndex: =3
+
+        Label2_2 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FillPortions: =1
+            Size: =21
+            Text: ='Header Component'.NomeTela
+            ZIndex: =2
+
+        UserContainer As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width * 0.25
+            ZIndex: =3
+
+            Label3_2 As label:
+                Align: =Align.Right
+                BorderColor: =RGBA(0, 89, 178, 1)
+                Color: =RGBA(232, 232, 232, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =1
+                PaddingRight: =10
+                Size: =15
+                Text: =User().FullName
+                ZIndex: =1
+
+            Image2_2 As image:
+                BorderColor: =RGBA(0, 89, 178, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Image2_2.Width
+                Image: =User().Image
+                RadiusBottomLeft: =Image2_2.Width * 0.5
+                RadiusBottomRight: =Image2_2.Width * 0.5
+                RadiusTopLeft: =Image2_2.Width * 0.5
+                RadiusTopRight: =Image2_2.Width * 0.5
+                Width: =Parent.Height * 0.8
+                ZIndex: =2
+

@@ -2180,7 +2180,7 @@
       "ZIndex",
       "NomeTela"
     ],
-    "LastModifiedTimestamp": "638027498840740400",
+    "LastModifiedTimestamp": "638069919345965094",
     "Name": "Header Component",
     "Rules": [
       {
@@ -2255,7 +2255,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638027498840740400",
+  "LastModifiedTimestamp": "638069919345965094",
   "Name": "f5454100ee474b378d19e4f1c4daa3fc",
   "OverridableProperties": {},
   "Version": "638026683421330296"

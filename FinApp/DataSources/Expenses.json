@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2022-10-20T16:30:13.0490000Z",
+      "LastChangedTimeString": "2022-12-14T22:32:36.7770000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -22,6 +22,7 @@
       "{VersionNumber}": "Version number",
       "Author": "Criado por",
       "Author#Claims": "Criado por Claims",
+      "Binance": "Binance",
       "Biscoint": "Biscoint",
       "CartaoInter": "Cartão Inter",
       "CartaoNubank": "Cartão Nubank",
@@ -37,6 +38,7 @@
       "Editor": "Modificado por",
       "Editor#Claims": "Modificado por Claims",
       "ID": "ID",
+      "IdExcel": "IdExcel",
       "Modified": "Modificado",
       "NovaFutura": "NovaFutura",
       "NuInvest": "NuInvest",

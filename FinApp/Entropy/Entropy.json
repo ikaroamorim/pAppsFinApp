@@ -24,6 +24,7 @@
     "Header Component_2": 25,
     "HomeScreen": 11,
     "Image1": 41,
+    "Image2": 42,
     "Image2_2": 8,
     "Image4": 22,
     "Label1": 14,
@@ -42,13 +43,12 @@
     "Separator1": 39,
     "Subtitle1": 38,
     "Title1": 23,
-    "Title2": 35,
     "Title2_1": 36,
     "UserContainer": 7
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "12/21/2022 23:39:08",
+  "HeaderLastSavedDateTimeUTC": "12/21/2022 23:43:03",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "5ef4d397-e35e-4131-a529-5d3ce9aeb990": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/3db45e09ee664b038fcb4ae38cad5cdf\"",
@@ -114,6 +114,7 @@
     "Header Component_2": {},
     "HomeScreen": {},
     "Image1": {},
+    "Image2": {},
     "Image2_2": {},
     "Image4": {},
     "Label1": {},
@@ -132,7 +133,6 @@
     "Separator1": {},
     "Subtitle1": {},
     "Title1": {},
-    "Title2": {},
     "Title2_1": {},
     "UserContainer": {}
   },
@@ -156,10 +156,11 @@
     "Header Component_2": 11,
     "HomeScreen": 0,
     "Image1": 19,
+    "Image2": 23,
     "Image2_2": 31,
     "Image4": 9,
     "Label1": 2,
-    "Label2": 24,
+    "Label2": 25,
     "Label2_2": 33,
     "Label3": 14,
     "Label3_2": 32,
@@ -172,10 +173,9 @@
     "MenuGallery": 6,
     "PDF Button": 18,
     "Separator1": 26,
-    "Subtitle1": 25,
+    "Subtitle1": 22,
     "Title1": 10,
-    "Title2": 22,
-    "Title2_1": 23,
+    "Title2_1": 24,
     "UserContainer": 30
   },
   "ResourcesJsonIndices": {
@@ -204,7 +204,7 @@
       "screen": 3
     },
     "DeserializationLoadTime": 2.2762544,
-    "ErrorCount": 0
+    "ErrorCount": 4
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

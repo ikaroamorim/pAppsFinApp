@@ -57,28 +57,10 @@ Account As screen:
         Y: =259
         ZIndex: =2
 
-        Title2 As label:
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FontWeight: =FontWeight.Semibold
-            Height: =44
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =20
-            Text: = ThisItem.Categoria.Value
-            VerticalAlign: =VerticalAlign.Top
-            Width: =935
-            X: =231
-            Y: =4
-            ZIndex: =2
-
         Subtitle1 As label:
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Height: =Self.Size * 1.8
+            Height: =32
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -87,9 +69,9 @@ Account As screen:
             Size: =18
             Text: =ThisItem.Descrição
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title2.Width
-            X: =Title2.X
-            Y: =Title2.Y + Title2.Height + 4
+            Width: =720
+            X: =336
+            Y: =30
             ZIndex: =3
 
         Separator1 As rectangle:
@@ -131,6 +113,16 @@ Account As screen:
             X: =1386
             Y: =19
             ZIndex: =7
+
+        Image2 As image:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =86
+            Image: =LookUp(varAccountCategories, ThisRecord.Value.Key =  ThisItem.Categoria.Value , ThisRecord.Value.Value)
+            OnSelect: =Select(Parent)
+            X: =206
+            ZIndex: =8
 
     Container1 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(241, 241, 241, 1)
@@ -276,7 +268,7 @@ Account As screen:
         BorderColor: =RGBA(0, 89, 178, 1)
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledFill: =RGBA(244, 244, 244, 1)
-        Image: =LookUp(varAccountCategories, ThisRecord.Value.Key = "Transporte", ThisRecord.Value.Value)
+        Image: =LookUp(varAccountCategories, ThisRecord.Value.Key =  ThisItem.Categoria.Value , ThisRecord.Value.Value)
         X: =63
         Y: =243
         ZIndex: =4

@@ -264,12 +264,3 @@ Account As screen:
             Text: ="PDF"
             ZIndex: =6
 
-    Image1 As image:
-        BorderColor: =RGBA(0, 89, 178, 1)
-        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledFill: =RGBA(244, 244, 244, 1)
-        Image: =LookUp(varAccountCategories, ThisRecord.Value.Key =  ThisItem.Categoria.Value , ThisRecord.Value.Value)
-        X: =63
-        Y: =243
-        ZIndex: =4
-

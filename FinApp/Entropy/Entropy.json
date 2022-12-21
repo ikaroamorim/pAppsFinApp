@@ -23,7 +23,6 @@
     "Header Component_1": 18,
     "Header Component_2": 25,
     "HomeScreen": 11,
-    "Image1": 41,
     "Image2": 42,
     "Image2_2": 8,
     "Image4": 22,
@@ -48,7 +47,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "12/21/2022 23:43:03",
+  "HeaderLastSavedDateTimeUTC": "12/21/2022 23:43:15",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "5ef4d397-e35e-4131-a529-5d3ce9aeb990": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/3db45e09ee664b038fcb4ae38cad5cdf\"",
@@ -113,7 +112,6 @@
     "Header Component_1": {},
     "Header Component_2": {},
     "HomeScreen": {},
-    "Image1": {},
     "Image2": {},
     "Image2_2": {},
     "Image4": {},
@@ -155,7 +153,6 @@
     "Header Component_1": 5,
     "Header Component_2": 11,
     "HomeScreen": 0,
-    "Image1": 19,
     "Image2": 23,
     "Image2_2": 31,
     "Image4": 9,
@@ -204,7 +201,7 @@
       "screen": 3
     },
     "DeserializationLoadTime": 2.2762544,
-    "ErrorCount": 4
+    "ErrorCount": 0
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

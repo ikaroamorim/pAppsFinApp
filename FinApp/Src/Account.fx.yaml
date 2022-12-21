@@ -68,7 +68,7 @@ Account As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =20
-            Text: =ThisItem.Categoria.Value
+            Text: = ThisItem.Categoria.Value
             VerticalAlign: =VerticalAlign.Top
             Width: =935
             X: =231
@@ -271,4 +271,13 @@ Account As screen:
             Size: =15
             Text: ="PDF"
             ZIndex: =6
+
+    Image1 As image:
+        BorderColor: =RGBA(0, 89, 178, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Image: =LookUp(varAccountCategories, ThisRecord.Value.Key = "Transporte", ThisRecord.Value.Value)
+        X: =63
+        Y: =243
+        ZIndex: =4
 

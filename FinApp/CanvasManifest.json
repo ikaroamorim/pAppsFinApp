@@ -70,6 +70,7 @@
       "reverttooldpowerautomate": false,
       "rtlinstudiopreview": false,
       "rtlsupport": false,
+      "supportcolumnnamesasidentifiers": false,
       "tabledoesntwraprecords": false,
       "untypedobject": false,
       "usedisplaynamemetadata": true,
@@ -109,7 +110,7 @@
     "PublishDataLocally": false,
     "PublishResourcesLocally": false,
     "PublishTarget": "player",
-    "UserLocale": "pt-BR"
+    "UserLocale": "en-US"
   },
   "ScreenOrder": [
     "HomeScreen",

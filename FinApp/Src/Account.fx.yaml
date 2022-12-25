@@ -233,7 +233,10 @@ Account As screen:
             BorderColor: =RGBA(0, 89, 178, 1)
             CalendarHeaderFill: =RGBA(0, 51, 102, 1)
             Color: =RGBA(0, 0, 0, 1)
-            DefaultDate: =varAccountDataFinal
+            DefaultDate: |-
+                =varAccountDataFinal
+                
+                //Today()
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)

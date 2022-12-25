@@ -208,7 +208,10 @@ Account As screen:
             BorderColor: =RGBA(0, 89, 178, 1)
             CalendarHeaderFill: =RGBA(0, 51, 102, 1)
             Color: =RGBA(0, 0, 0, 1)
-            DefaultDate: =Date( Year(Today()), Month(Today()), 01)
+            DefaultDate: |-
+                =varAccountDataInicial
+                
+                //Date( Year(Today()), Month(Today()), 01)
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
@@ -230,6 +233,7 @@ Account As screen:
             BorderColor: =RGBA(0, 89, 178, 1)
             CalendarHeaderFill: =RGBA(0, 51, 102, 1)
             Color: =RGBA(0, 0, 0, 1)
+            DefaultDate: =varAccountDataFinal
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)

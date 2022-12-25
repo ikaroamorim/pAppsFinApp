@@ -328,7 +328,8 @@ Account As screen:
             });
         Size: =15
         Text: ="Filter"
-        X: =16
-        Y: =385
+        Visible: =false
+        X: =1739
+        Y: =259
         ZIndex: =5
 

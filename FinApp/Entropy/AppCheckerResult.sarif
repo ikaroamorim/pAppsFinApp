@@ -164,36 +164,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Account.Container1.DatePickerInicio.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Account.Container1.DatePickerInicio.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Account",
-                "type": "Account.Container1.DatePickerInicio"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Account.Container1.DatePickerFinal.AccessibleLabel"
                 }
               ],

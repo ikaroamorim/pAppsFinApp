@@ -34,6 +34,18 @@ Account As screen:
         Items: |-
             =If(
                 Dropdown1.SelectedText.Value = "Todos",
+                colItensGalery,
+                Filter(
+                colItensGalery,
+                ThisRecord.Categoria.Value = Dropdown1.SelectedText.Value
+            )
+            )
+            
+            
+            
+            /*
+            If(
+                Dropdown1.SelectedText.Value = "Todos",
                 SortByColumns(
                     Filter(
                         Expenses,
@@ -58,17 +70,7 @@ Account As screen:
                     Descending
                 )
             )
-            /*SortByColumns(
-                Filter(
-                    Expenses;
-                    And(
-                        ThisRecord.Data >= DatePickerInicio.SelectedDate;
-                        ThisRecord.Data < DatePickerFinal.SelectedDate
-                    )
-                );
-                "Data";
-                Descending
-            )*/
+            */
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =86
@@ -205,6 +207,7 @@ Account As screen:
             ZIndex: =2
 
         DatePickerInicio As datepicker:
+            AccessibleLabel: ="Filtro Data Inicial"
             BorderColor: =RGBA(0, 89, 178, 1)
             CalendarHeaderFill: =RGBA(0, 51, 102, 1)
             Color: =RGBA(0, 0, 0, 1)
@@ -217,6 +220,10 @@ Account As screen:
             DisabledFill: =RGBA(244, 244, 244, 1)
             HoverDateFill: =RGBA(153, 205, 255, 1)
             IconBackground: =RGBA(0, 51, 102, 1)
+            OnChange: |-
+                =UpdateContext({varAccountDataInicial: Self.SelectedDate});
+                
+                Select(btnAccountFilter);
             SelectedDateFill: =RGBA(0, 51, 102, 1)
             ZIndex: =3
 
@@ -242,6 +249,10 @@ Account As screen:
             DisabledFill: =RGBA(244, 244, 244, 1)
             HoverDateFill: =RGBA(153, 205, 255, 1)
             IconBackground: =RGBA(0, 51, 102, 1)
+            OnChange: |-
+                =UpdateContext({varAccountDataFinal: Self.SelectedDate});
+                
+                Select(btnAccountFilter);
             SelectedDateFill: =RGBA(0, 51, 102, 1)
             ZIndex: =5
 
@@ -293,13 +304,31 @@ Account As screen:
             Text: ="PDF"
             ZIndex: =6
 
-    Label6 As label:
-        BorderColor: =RGBA(0, 89, 178, 1)
-        Color: =RGBA(0, 0, 0, 1)
+    btnAccountFilter As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
-        Size: =13
-        Text: =CountRows( colItensGalery)
-        X: =21
-        Y: =240
-        ZIndex: =4
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 51, 102, 1)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 51, 102, 1), -20%)
+        OnSelect: |-
+            =UpdateContext({
+                    colItensGalery: SortByColumns(
+                        Filter(
+                            Expenses,
+                            And(
+                                ThisRecord.Data >= varAccountDataInicial,
+                                ThisRecord.Data < varAccountDataFinal
+                            )
+                        ),
+                        "Data",
+                        Descending
+                    )
+            });
+        Size: =15
+        Text: ="Filter"
+        X: =16
+        Y: =385
+        ZIndex: =5
 

@@ -36,13 +36,10 @@ Account As screen:
                 Dropdown1.SelectedText.Value = "Todos",
                 colItensGalery,
                 Filter(
-                colItensGalery,
-                ThisRecord.Categoria.Value = Dropdown1.SelectedText.Value
+                    colItensGalery,
+                    ThisRecord.Categoria.Value = Dropdown1.SelectedText.Value
+                )
             )
-            )
-            
-            
-            
             /*
             If(
                 Dropdown1.SelectedText.Value = "Todos",
@@ -74,12 +71,12 @@ Account As screen:
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =86
-        Width: =App.Width *0.8
-        X: =App.Width * 0.1
-        Y: =259
+        Width: =1920
+        Y: =303
         ZIndex: =2
 
-        Subtitle1 As label:
+        lblDescricao As label:
+            AutoHeight: =true
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             Height: =32
@@ -88,12 +85,12 @@ Account As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =18
+            Size: =26
             Text: =ThisItem.Descrição
             VerticalAlign: =VerticalAlign.Top
             Width: =720
             X: =336
-            Y: =30
+            Y: =Parent.TemplateHeight/2 -Self.Height/2
             ZIndex: =3
 
         Separator1 As rectangle:
@@ -105,7 +102,8 @@ Account As screen:
             Y: =Parent.TemplateHeight - 1
             ZIndex: =5
 
-        Title2_1 As label:
+        lblData As label:
+            AutoHeight: =true
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FontWeight: =FontWeight.Semibold
@@ -119,34 +117,50 @@ Account As screen:
             Text: =ThisItem.Data
             VerticalAlign: =VerticalAlign.Top
             Width: =163
-            X: |-
-                =
-                 24
-            Y: =19
+            X: =22
+            Y: =Parent.TemplateHeight/2 -Self.Height/2
             ZIndex: =6
 
-        Label2 As label:
+        lblTotal As label:
+            Align: =Align.Right
+            AutoHeight: =true
             BorderColor: =RGBA(0, 89, 178, 1)
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Height: =43
+            Height: =44
             OnSelect: =Select(Parent)
-            Size: =20
-            Text: ="R$ " & Text(ThisItem.Total, "0.00")
-            Width: =208
-            X: =1327
-            Y: =19
+            Size: =26
+            Text: =Text(ThisItem.Total, "0.00")
+            Width: =172
+            X: =1716
+            Y: =Parent.TemplateHeight/2 -Self.Height/2
             ZIndex: =7
 
-        Image2 As image:
+        imgIconCategoria As image:
             BorderColor: =RGBA(0, 89, 178, 1)
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
-            Height: =86
+            Height: =Parent.TemplateHeight * 0.7
             Image: =LookUp(varAccountCategories, ThisRecord.Value.Key =  ThisItem.Categoria.Value , ThisRecord.Value.Value)
             OnSelect: =Select(Parent)
             X: =206
+            Y: =Parent.TemplateHeight/2 -Self.Height/2
             ZIndex: =8
+
+        lblTotalMoeda As label:
+            Align: =Align.Right
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =44
+            OnSelect: =Select(Parent)
+            Size: =26
+            Text: ="R$"
+            Width: =172
+            X: =lblTotal.X - Self.Width
+            Y: =Parent.TemplateHeight/2 -Self.Height/2
+            ZIndex: =9
 
     Container1 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(241, 241, 241, 1)
@@ -332,4 +346,17 @@ Account As screen:
         X: =1739
         Y: =259
         ZIndex: =5
+
+    Label8 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 89, 178, 1)
+        Color: =RGBA(232, 232, 232, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(0, 51, 102, 1)
+        Height: =87
+        Size: =26
+        Text: ="Total"
+        Width: =1920
+        Y: =216
+        ZIndex: =6
 

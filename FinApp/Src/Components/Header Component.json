@@ -107,7 +107,7 @@
                 "Name": "AppLogo",
                 "Parent": "LogoContainer",
                 "PersistMetaDataIDKey": false,
-                "PublishOrderIndex": 29,
+                "PublishOrderIndex": 31,
                 "Rules": [
                   {
                     "Category": "Data",
@@ -417,7 +417,7 @@
             "Name": "LogoContainer",
             "Parent": "MainContainer",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 28,
+            "PublishOrderIndex": 30,
             "Rules": [
               {
                 "Category": "Design",
@@ -685,7 +685,7 @@
                 "Name": "Image2_2",
                 "Parent": "UserContainer",
                 "PersistMetaDataIDKey": false,
-                "PublishOrderIndex": 31,
+                "PublishOrderIndex": 33,
                 "Rules": [
                   {
                     "Category": "Data",
@@ -1019,7 +1019,7 @@
                 "Name": "Label3_2",
                 "Parent": "UserContainer",
                 "PersistMetaDataIDKey": false,
-                "PublishOrderIndex": 32,
+                "PublishOrderIndex": 34,
                 "Rules": [
                   {
                     "Category": "Data",
@@ -1383,7 +1383,7 @@
             "Name": "UserContainer",
             "Parent": "MainContainer",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 30,
+            "PublishOrderIndex": 32,
             "Rules": [
               {
                 "Category": "Design",
@@ -1644,7 +1644,7 @@
             "Name": "Label2_2",
             "Parent": "MainContainer",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 33,
+            "PublishOrderIndex": 35,
             "Rules": [
               {
                 "Category": "Data",
@@ -2010,7 +2010,7 @@
         "Name": "MainContainer",
         "Parent": "Header Component",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 27,
+        "PublishOrderIndex": 29,
         "Rules": [
           {
             "Category": "Design",

@@ -12,8 +12,8 @@ Account As screen:
                     Filter(
                         Expenses,
                         And(
-                            ThisRecord.Data >= DatePickerInicio.SelectedDate,
-                            ThisRecord.Data < DatePickerFinal.SelectedDate
+                            ThisRecord.Data >= dteDataInicial.SelectedDate,
+                            ThisRecord.Data < dteDataFinal.SelectedDate
                         )
                     ),
                     "Data",
@@ -24,7 +24,7 @@ Account As screen:
     "'Header Component_2' As 'Header Component'":
         NomeTela: ="Conta Corrente"
 
-    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+    "galAccounts As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         BorderColor: =RGBA(0, 89, 178, 1)
         Height: |+
             =777
@@ -33,11 +33,11 @@ Account As screen:
             
         Items: |-
             =If(
-                Dropdown1.SelectedText.Value = "Todos",
+                drpCategoria.SelectedText.Value = "Todos",
                 colItensGalery,
                 Filter(
                     colItensGalery,
-                    ThisRecord.Categoria.Value = Dropdown1.SelectedText.Value
+                    ThisRecord.Categoria.Value = drpCategoria.SelectedText.Value
                 )
             )
             /*
@@ -162,7 +162,7 @@ Account As screen:
             Y: =Parent.TemplateHeight/2 -Self.Height/2
             ZIndex: =9
 
-    Container1 As groupContainer.horizontalAutoLayoutContainer:
+    conFiltros As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(241, 241, 241, 1)
         Height: =App.Height * 0.1
         LayoutAlignItems: =LayoutAlignItems.Center
@@ -174,7 +174,7 @@ Account As screen:
         Y: ='Header Component_2'.Height
         ZIndex: =3
 
-        Dropdown1 As dropdown:
+        drpCategoria As dropdown:
             BorderColor: =RGBA(0, 89, 178, 1)
             ChevronBackground: =RGBA(0, 51, 102, 1)
             ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
@@ -211,7 +211,7 @@ Account As screen:
             Size: =13
             ZIndex: =1
 
-        Label3 As label:
+        lblDataInicial As label:
             Align: =Align.Right
             BorderColor: =RGBA(0, 89, 178, 1)
             Color: =RGBA(0, 0, 0, 1)
@@ -220,7 +220,7 @@ Account As screen:
             Text: ="Data Inicial"
             ZIndex: =2
 
-        DatePickerInicio As datepicker:
+        dteDataInicial As datepicker:
             AccessibleLabel: ="Filtro Data Inicial"
             BorderColor: =RGBA(0, 89, 178, 1)
             CalendarHeaderFill: =RGBA(0, 51, 102, 1)
@@ -241,7 +241,7 @@ Account As screen:
             SelectedDateFill: =RGBA(0, 51, 102, 1)
             ZIndex: =3
 
-        Label4 As label:
+        lblDataFinal As label:
             Align: =Align.Right
             BorderColor: =RGBA(0, 89, 178, 1)
             Color: =RGBA(0, 0, 0, 1)
@@ -250,7 +250,7 @@ Account As screen:
             Text: ="Data Final"
             ZIndex: =4
 
-        DatePickerFinal As datepicker:
+        dteDataFinal As datepicker:
             BorderColor: =RGBA(0, 89, 178, 1)
             CalendarHeaderFill: =RGBA(0, 51, 102, 1)
             Color: =RGBA(0, 0, 0, 1)
@@ -270,7 +270,7 @@ Account As screen:
             SelectedDateFill: =RGBA(0, 51, 102, 1)
             ZIndex: =5
 
-        "'PDF Button' As button":
+        btnPDF As button:
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
@@ -282,7 +282,7 @@ Account As screen:
                 =Set(
                     varPDF,
                     PDF(
-                        Gallery1,
+                        galAccounts,
                         {
                             Orientation: Portrait,
                             Size: PaperSize.A4,
@@ -347,16 +347,39 @@ Account As screen:
         Y: =259
         ZIndex: =5
 
-    Label8 As label:
-        Align: =Align.Center
-        BorderColor: =RGBA(0, 89, 178, 1)
-        Color: =RGBA(232, 232, 232, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Fill: =RGBA(0, 51, 102, 1)
+    conTotal As groupContainer.horizontalAutoLayoutContainer:
         Height: =87
-        Size: =26
-        Text: ="Total"
-        Width: =1920
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =App.Width
         Y: =216
-        ZIndex: =6
+        ZIndex: =7
+
+        icoSorting As icon.ArrowsUpDown:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 51, 102, 1)
+            Height: =Parent.Height
+            Icon: =Icon.Sort
+            PaddingBottom: =10
+            PaddingTop: =10
+            Width: =200
+            ZIndex: =1
+
+        lblTotalGastos As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(232, 232, 232, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 51, 102, 1)
+            FillPortions: =1
+            Height: =87
+            Size: =26
+            Text: ="Total - R$ " & Text(Sum(colItensGalery, Total), "0.00")
+            Width: =1920
+            Y: =216
+            ZIndex: =2
 

@@ -134,19 +134,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Account.Container1.Dropdown1.AccessibleLabel"
+                  "fullyQualifiedName": "Account.conFiltros.drpCategoria.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Account.Container1.Dropdown1.AccessibleLabel",
+                  "fullyQualifiedName": "Account.conFiltros.drpCategoria.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Account",
-                "type": "Account.Container1.Dropdown1"
+                "type": "Account.conFiltros.drpCategoria"
               }
             }
           ],
@@ -164,19 +164,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Account.Container1.DatePickerFinal.AccessibleLabel"
+                  "fullyQualifiedName": "Account.conFiltros.dteDataFinal.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Account.Container1.DatePickerFinal.AccessibleLabel",
+                  "fullyQualifiedName": "Account.conFiltros.dteDataFinal.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Account",
-                "type": "Account.Container1.DatePickerFinal"
+                "type": "Account.conFiltros.dteDataFinal"
               }
             }
           ],
@@ -194,19 +194,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Account.Gallery1.AccessibleLabel"
+                  "fullyQualifiedName": "Account.galAccounts.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Account.Gallery1.AccessibleLabel",
+                  "fullyQualifiedName": "Account.galAccounts.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Account",
-                "type": "Account.Gallery1"
+                "type": "Account.galAccounts"
               }
             }
           ],
@@ -224,19 +224,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Account.Gallery1.TabIndex"
+                  "fullyQualifiedName": "Account.galAccounts.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Account.Gallery1.TabIndex",
+                  "fullyQualifiedName": "Account.galAccounts.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Account",
-                "type": "Account.Gallery1"
+                "type": "Account.galAccounts"
               }
             }
           ],
